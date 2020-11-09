@@ -1,6 +1,6 @@
 # General Info
 
-This is a small project that represents different colors according to the current time, using the exact 6 digits of the ```HH:MM:SS``` time format as a hexadecimal code ```#000000```.
+This is a small project that represents different colors according to the current time, using the exact 6 digits of the ```HH:MM:SS``` time format as a hexadecimal code e.g. ```#000000```.
 
 # Preview
 
