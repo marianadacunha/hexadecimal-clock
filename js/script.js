@@ -1,14 +1,29 @@
-function load() {
-    var msg = window.document.getElementById('msg)
-    var date = new Date()
-    var hour = date.getHours()
-    msg.innerHTML = ${hour}
+// 'setInterval' will repeatedly call the function every 1 second
+setInterval(function load() {
+    let today = new Date();
+    let hour = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+
+    // If the number of hours/minutes/seconds is less than 10, this will add a '0' at the beginning
+    // so the number will be a proper hexadecimal code with a total of 6 digits
+    hexHour = (hour < 10 ? '0' : '') + hour + ":" +
+        (minutes < 10 ? '0' : '') + minutes + ":" +
+        (seconds < 10 ? '0' : '') + seconds;
+
+    hexColor = "#" + (hour < 10 ? '0' : '') + hour +
+        (minutes < 10 ? '0' : '') + minutes +
+        (seconds < 10 ? '0' : '') + seconds;
+
+
+    window.document.getElementById('clock').innerHTML = hexHour;
+    window.document.body.style.backgroundColor = hexColor;
 
     if (hour >= 0 && hour < 12) {
-        // Good morning!
+        document.getElementById("greeting").innerHTML = "Good morning!";
     } else if (hour >= 12 && hour < 18) {
-        // Good afternoon!
+        document.getElementById("greeting").innerHTML = "Good afternoon!";
     } else {
-        // Good evening!
+        document.getElementById("greeting").innerHTML = "Good evening!";
     }
-}
+}, 1)
